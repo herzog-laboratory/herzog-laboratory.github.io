@@ -85,7 +85,7 @@ Dr. Chiara Herzog leads the Epigenetics and Ageing lab at King's College London,
 
 ## Awards & Recognition
 
-- 2025 - Wellcome Trust Career Development Award
+<!-- - 2025 - Wellcome Trust Career Development Award -->
 - 2025 - Rising Star, Longevity Summit Dublin
 - 2025 - Prof. Anthony Mellows Medal
 - 2024 - King's Prize Fellowship
