@@ -181,28 +181,28 @@ sections:
         link: "/publications/"
         icon: hero/document-duplicate
 
-  - block: stats
-    id: stats
-    content:
-      items:
-        - statistic: "20+"
-          description: Publications in top-tier journals
-          sub_metric: Cell, Nature Medicine, Nature Aging
-          icon: hero/document-text
-        - statistic: "£2.8M+"
-          description: Active research funding
-          sub_metric: Wellcome Trust
-          icon: hero/currency-pound
-        - statistic: "3+"
-          description: Active research projects
-          sub_metric: Across 3 major domains
-          icon: hero/beaker
-    design:
-      layout: cards
-      # Section background color (CSS class)
-      css_class: "bg-gradient-to-b from-white to-gray-50 dark:from-primary-900/20 dark:to-gray-800"
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]
+  # - block: stats
+  #   id: stats
+  #   content:
+  #     items:
+  #       - statistic: "20+"
+  #         description: Publications in top-tier journals
+  #         sub_metric: Cell, Nature Medicine, Nature Aging
+  #         icon: hero/document-text
+  #       - statistic: "£2.8M+"
+  #         description: Active research funding
+  #         sub_metric: Wellcome Trust
+  #         icon: hero/currency-pound
+  #       - statistic: "3+"
+  #         description: Active research projects
+  #         sub_metric: Across 3 major domains
+  #         icon: hero/beaker
+  #   design:
+  #     layout: cards
+  #     # Section background color (CSS class)
+  #     css_class: "bg-gradient-to-b from-white to-gray-50 dark:from-primary-900/20 dark:to-gray-800"
+  #     spacing:
+  #       padding: ["3rem", 0, "3rem", 0]
 
   # - block: collection
   #   id: featured
@@ -379,9 +379,9 @@ params:
           - name: "Affiliated with King’s College London"
             url: "https://www.kcl.ac.uk/"
             logo: "/media/kcl.png"
-          - name: "Funded by the Wellcome Trust"
-            url: "https://wellcome.org/"
-            logo: "/media/wellcome.png"
+          # - name: "Funded by the Wellcome Trust"
+          #   url: "https://wellcome.org/"
+          #   logo: "/media/wellcome.png"
 
       - title: "Links"
         type: "links"
