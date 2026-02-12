@@ -1,0 +1,92 @@
+{{ $p := .item }}
+
+{{/* tags */}}
+{{ $etype := lower ($p.Params.event_type | default "") }}
+{{ $role := lower ($p.Params.role | default "") }}
+{{ $tags := $p.Params.tags | default (slice) }}
+{{ $tagLower := slice }}
+{{ range $tags }}{{ $tagLower = $tagLower | append (lower .) }}{{ end }}
+{{ $tagstr := delimit $tagLower " " }}
+{{ $primaryTag := "" }}{{ with (index $tagLower 0) }}{{ $primaryTag = . }}{{ end }}
+
+{{/* authors */}}
+{{ $authorSlugs := $p.Params.authors | default (slice) }}
+
+{{/* date */}}
+{{ $isPast := lt $p.Date now }}
+
+{{/* search haystack */}}
+{{ $authorNames := slice }}
+{{ range $authorSlugs }}
+  {{ $ap := site.GetPage (printf "/authors/%s" .) }}
+  {{ if $ap }}{{ $authorNames = $authorNames | append $ap.Title }}{{ else }}{{ $authorNames = $authorNames | append . }}{{ end }}
+{{ end }}
+{{ $authorNamesStr := delimit $authorNames ", " }}
+
+<a href="{{ $p.RelPermalink }}"
+   class="event-row block rounded-xl px-4 py-3 {{ if $isPast }}is-past{{ end }}"
+   data-type="{{ $etype }}"
+   data-role="{{ $role}}"
+   data-authors="{{ delimit $authorSlugs " " }}"
+   data-hay="{{ lower (printf "%s %v %v %v %v" $p.Title ($p.Params.location|default "") ($p.Params.country|default "") $authorNamesStr $tagstr) }}">
+
+  <div class="event-grid">
+
+    <!-- date -->
+    <div class="event-date">
+      {{ with $p.Date }}{{ .Format "Jan 2, 2006" }}{{ end }}
+    </div>
+
+    <!-- flag -->
+    <div class="event-flag">
+      {{ with $p.Params.country_flag }}{{ . }}{{ end }}
+    </div>
+
+    <!-- title -->
+    <div class="event-title">
+      {{ $p.Title }}
+    </div>
+
+    <!-- people -->
+    <div class="event-people">
+      <div class="flex flex-wrap gap-2 justify-end">
+        {{ range $authorSlugs }}
+          {{ $slug := . }}
+          {{ $ap := site.GetPage (printf "/authors/%s" $slug) }}
+
+          {{ if $ap }}
+            {{ $name := $ap.Title | default $slug }}
+
+            {{ $avatar := "" }}
+            {{ with ($ap.Resources.GetMatch "avatar.*") }}
+              {{ $avatar = .RelPermalink }}
+            {{ else }}
+              {{ with ($ap.Resources.GetMatch "avatar*") }}{{ $avatar = .RelPermalink }}{{ end }}
+            {{ end }}
+
+            <span class="person" title="{{ $name }}">
+            {{ if $avatar }}
+                <img src="{{ $avatar }}" alt="{{ $name }}" class="h-6 w-6 rounded-full object-cover" />
+            {{ else }}
+                <span class="h-6 w-6 rounded-full border inline-block"></span>
+            {{ end }}
+            </span>
+          {{ else }}
+            <span class="text-sm opacity-70">{{ $slug }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- tag -->
+    <div class="event-tag text-right">
+    {{ with $etype }}
+        <span class="event-tag-label event-tag-type">{{ upper . }}</span>
+    {{ end }}
+    {{ with $role }}
+        <span class="event-tag-label event-tag-role">{{ upper . }}</span>
+    {{ end }}
+    </div>
+
+  </div>
+</a>

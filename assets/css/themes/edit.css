@@ -1,0 +1,44 @@
+/* Hugo Blox custom theme: HERZOG EDITORIAL MOLECULAR */
+
+:root {
+
+  /* ---------- Primary: Editorial Ink (#0B1220) ---------- */
+  --hb-primary-50-rgb: 242 245 251;
+  --hb-primary-100-rgb: 227 234 246;
+  --hb-primary-200-rgb: 199 212 236;
+  --hb-primary-300-rgb: 165 186 222;
+  --hb-primary-400-rgb: 121 149 201;
+  --hb-primary-500-rgb: 11 18 32; /* base */
+  --hb-primary-600-rgb: 9 15 27;
+  --hb-primary-700-rgb: 7 12 22;
+  --hb-primary-800-rgb: 6 9 17;
+  --hb-primary-900-rgb: 4 6 12;
+  --hb-primary-950-rgb: 3 4 8;
+
+  /* ---------- Secondary: Slate Blue (clinical but understated) (#5C7FA3) ---------- */
+  --hb-secondary-50-rgb: 241 246 251;
+  --hb-secondary-100-rgb: 225 236 246;
+  --hb-secondary-200-rgb: 196 217 236;
+  --hb-secondary-300-rgb: 161 193 222;
+  --hb-secondary-400-rgb: 122 163 203;
+  --hb-secondary-500-rgb: 92 127 163; /* base */
+  --hb-secondary-600-rgb: 78 109 142;
+  --hb-secondary-700-rgb: 64 89 117;
+  --hb-secondary-800-rgb: 50 69 91;
+  --hb-secondary-900-rgb: 37 51 67;
+  --hb-secondary-950-rgb: 23 32 42;
+
+  /* ---------- Tertiary / Accent: Deep Plum (distinctive “you” accent) (#56406F) ---------- */
+  --hb-tertiary-50-rgb: 245 242 248;
+  --hb-tertiary-100-rgb: 233 227 240;
+  --hb-tertiary-200-rgb: 212 199 226;
+  --hb-tertiary-300-rgb: 185 166 208;
+  --hb-tertiary-400-rgb: 151 124 186;
+  --hb-tertiary-500-rgb: 86 64 111; /* base */
+  --hb-tertiary-600-rgb: 73 54 95;
+  --hb-tertiary-700-rgb: 60 44 78;
+  --hb-tertiary-800-rgb: 47 34 61;
+  --hb-tertiary-900-rgb: 35 25 45;
+  --hb-tertiary-950-rgb: 22 16 29;
+
+}

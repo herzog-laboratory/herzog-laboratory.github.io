@@ -1,0 +1,50 @@
+/* Hugo Blox custom theme: HERZOG SCHOLARLY INNOVATION (Light Hero-Safe) */
+
+:root {
+
+  /* ---------- Primary: Scholarly Violet (#8C82C9) ----------
+     Signals: intelligence, innovation, depth (without gloom)
+  */
+  --hb-primary-50-rgb: 246 245 251;
+  --hb-primary-100-rgb: 237 235 246;
+  --hb-primary-200-rgb: 218 215 238;
+  --hb-primary-300-rgb: 198 192 228;
+  --hb-primary-400-rgb: 174 168 217;
+  --hb-primary-500-rgb: 140 130 201; /* base */
+  --hb-primary-600-rgb: 123 114 177;
+  --hb-primary-700-rgb: 104 96 149;
+  --hb-primary-800-rgb: 81 75 117;
+  --hb-primary-900-rgb: 56 52 80;
+  --hb-primary-950-rgb: 36 34 52;
+
+  /* ---------- Secondary: Translational Teal (#5F9EA0) ----------
+     Signals: trust, life sciences, medical credibility (not generic hospital-blue)
+  */
+  --hb-secondary-50-rgb: 242 247 247;
+  --hb-secondary-100-rgb: 229 239 240;
+  --hb-secondary-200-rgb: 204 224 225;
+  --hb-secondary-300-rgb: 175 206 208;
+  --hb-secondary-400-rgb: 143 187 188;
+  --hb-secondary-500-rgb: 95 158 160; /* base */
+  --hb-secondary-600-rgb: 84 139 141;
+  --hb-secondary-700-rgb: 70 117 118;
+  --hb-secondary-800-rgb: 55 92 93;
+  --hb-secondary-900-rgb: 38 63 64;
+  --hb-secondary-950-rgb: 25 41 42;
+
+  /* ---------- Tertiary / Accent: Biological Coral (#D08C78) ----------
+     Signals: warmth, collaboration, approachability (less “marketing orange”)
+  */
+  --hb-tertiary-50-rgb: 251 246 244;
+  --hb-tertiary-100-rgb: 247 237 233;
+  --hb-tertiary-200-rgb: 240 218 212;
+  --hb-tertiary-300-rgb: 232 198 188;
+  --hb-tertiary-400-rgb: 222 174 160;
+  --hb-tertiary-500-rgb: 208 140 120; /* base */
+  --hb-tertiary-600-rgb: 183 123 106;
+  --hb-tertiary-700-rgb: 154 104 89;
+  --hb-tertiary-800-rgb: 121 81 70;
+  --hb-tertiary-900-rgb: 83 56 48;
+  --hb-tertiary-950-rgb: 54 36 31;
+
+}

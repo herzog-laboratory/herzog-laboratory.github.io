@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<head><link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-semibold mb-8">{{ .Title }}</h1>
+
+
+<div id="pubs-controls" class="pub-controls">
+  <input id="pub-search" class="pub-search" type="search" placeholder="Search publications…" autocomplete="off">
+  <select id="pub-year" class="pub-year-select">
+    <option value="">All years</option>
+  </select>
+</div>
+
+<div id="pubs-status" data-bib="/bib/references.bib"
+     data-people="/bib/people.json"
+     data-preview-click="lightbox" 
+     style="opacity:.7; font-size:0.95rem; margin: 1rem 0;"></div>
+
+<div id="pubs"></div>
+
+<!-- Parser -->
+<script src="https://cdn.jsdelivr.net/npm/bibtex-parse-js@0.0.24/bibtexParse.min.js" defer></script>
+<script src="/js/pubs-bib.js" defer></script>
+
+<!-- Optional metrics (only if you still want them) -->
+<script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> 
+<script async src="https://badge.dimensions.ai/badge.js"></script>
+
+</div>
+
+
+{{ end }}

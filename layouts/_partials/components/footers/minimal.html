@@ -1,0 +1,53 @@
+{{/* Optional: language switcher */}}
+{{ $show_translations := site.Params.footer.show_translations | default true }}
+{{ if .IsTranslated | and $show_translations }}
+<div class="mx-auto flex gap-3 py-2 px-4">
+  <div class="font-bold">
+    {{- partial "functions/get_icon" (dict "name" "globe-alt" "attributes" `class="inline-block pr-1" style="height: 1em"`) -}}
+    {{ i18n "languages" }}:
+  </div>
+  <div class="font-bold">{{ index site.Data.languages .Lang }}</div>
+  {{ range .Translations }}
+  <div><a href="{{ .Permalink }}">{{ index site.Data.languages .Lang }}</a></div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* NEW: Global footer logos block (Affiliations + Funders) */}}
+{{ partial "components/footers/lab-footer.html" . }}
+
+{{/* Your existing JS */}}
+{{ $particles := resources.Get "js/particles.js" | js.Build (dict "format" "esm") | minify | fingerprint }}
+<script type="module" src="{{ $particles.RelPermalink }}"></script>
+
+{{ $js := resources.Get "js/epi-narrative.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+{{ $js := resources.Get "js/block-jump.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+{{ $events := resources.Get "js/events-filter.js" | minify | fingerprint }}
+<script src="{{ $events.RelPermalink }}" integrity="{{ $events.Data.Integrity }}"></script>
+
+{{ if or (site.GetPage "/terms.md") (site.GetPage "/privacy.md") }}
+<p class="text-center">
+  {{ with site.GetPage "/privacy.md" }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+  {{ with site.GetPage "/terms.md" }}
+  {{ if site.GetPage "/privacy.md" }} &middot; {{ end }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+</p>
+{{ end }}
+
+<script src="/js/pubs-embed.js" defer></script>
+
+{{ with site.Params.footer.text }}
+<p class="text-center">
+  {{ . | markdownify | emojify }}
+</p>
+{{ end }}
+
+{{/* Display copyright license. */}}
+{{ partial "site_footer_license" . }}

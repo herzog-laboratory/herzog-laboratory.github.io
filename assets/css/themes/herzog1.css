@@ -1,0 +1,44 @@
+/* Hugo Blox custom theme: HERZOG TRAD TWIST */
+
+:root {
+
+  /* ---------- Primary: Herzog Violet (slightly more mature) (#6C5B8C) ---------- */
+  --hb-primary-50-rgb: 244 242 248;
+  --hb-primary-100-rgb: 232 227 241;
+  --hb-primary-200-rgb: 208 200 229;
+  --hb-primary-300-rgb: 179 166 214;
+  --hb-primary-400-rgb: 145 127 196;
+  --hb-primary-500-rgb: 108 91 140; /* base */
+  --hb-primary-600-rgb: 92 77 123;
+  --hb-primary-700-rgb: 76 64 103;
+  --hb-primary-800-rgb: 60 51 82;
+  --hb-primary-900-rgb: 44 38 60;
+  --hb-primary-950-rgb: 28 24 39;
+
+  /* ---------- Secondary: Clinical Teal (molecular/translational) (#4F8C8D) ---------- */
+  --hb-secondary-50-rgb: 240 250 250;
+  --hb-secondary-100-rgb: 219 244 244;
+  --hb-secondary-200-rgb: 182 232 232;
+  --hb-secondary-300-rgb: 141 216 216;
+  --hb-secondary-400-rgb: 102 198 198;
+  --hb-secondary-500-rgb: 79 140 141; /* base */
+  --hb-secondary-600-rgb: 66 120 121;
+  --hb-secondary-700-rgb: 55 99 100;
+  --hb-secondary-800-rgb: 44 78 79;
+  --hb-secondary-900-rgb: 33 58 59;
+  --hb-secondary-950-rgb: 20 37 38;
+
+  /* ---------- Tertiary / Accent: Muted Coral-Rose (biological warmth) (#C98A7A) ---------- */
+  --hb-tertiary-50-rgb: 253 246 244;
+  --hb-tertiary-100-rgb: 251 232 228;
+  --hb-tertiary-200-rgb: 246 205 197;
+  --hb-tertiary-300-rgb: 238 170 158;
+  --hb-tertiary-400-rgb: 226 130 114;
+  --hb-tertiary-500-rgb: 201 138 122; /* base */
+  --hb-tertiary-600-rgb: 176 114 101;
+  --hb-tertiary-700-rgb: 147 92 82;
+  --hb-tertiary-800-rgb: 115 70 63;
+  --hb-tertiary-900-rgb: 84 51 46;
+  --hb-tertiary-950-rgb: 52 31 28;
+
+}

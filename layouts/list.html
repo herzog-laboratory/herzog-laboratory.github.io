@@ -1,0 +1,220 @@
+{{/* layouts/authors/list.html
+     Author profile page layout:
+     - Wide hero card (avatar/name/role/tags/social)
+     - Narrow bio
+     - Sections: Publications (JS embed), Events (grid-3), News (grid-3)
+*/}}
+
+{{ define "main" }}
+
+{{/* Detect root /authors/ vs /authors/<slug>/ */}}
+{{ $slug := "" }}
+{{ if .File }}
+  {{ $slug = path.Base .File.Dir }}
+{{ end }}
+{{ $is_root := or (eq $slug "") (eq $slug "authors") }}
+
+{{/* ---------- ROOT AUTHORS PAGE: keep your existing listing ---------- */}}
+{{ if $is_root }}
+
+  <div class="max-w-prose mx-auto flex justify-center">
+    <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+      <h1 class="lg:text-6xl">{{ .Title }}</h1>
+      {{ .Content }}
+    </article>
+  </div>
+
+  {{ $view := .Params.view | default "card" }}
+  {{ $block := . }}
+
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+  {{ $config := dict
+    "columns" (.Params.columns | default 2)
+    "len" (len $paginator.Pages)
+    "fill_image" (.Params.fill_image | default true)
+    "show_date" (.Params.show_date | default true)
+    "show_read_time" (.Params.show_read_time | default true)
+    "show_read_more" (.Params.show_read_more | default true)
+  }}
+
+  {{/* Check if any pages have author_notes to enable Alpine.js */}}
+  {{ range .Pages }}
+    {{ if isset .Params "author_notes" }}
+      {{ $.Store.Set "has_alpine" true }}
+      {{ break }}
+    {{ end }}
+  {{ end }}
+
+  <div class="flex flex-col items-center">
+    {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
+    {{ range $index, $item := $paginator.Pages }}
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" $view "index" $index "config" $config) }}
+    {{ end }}
+    {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" $view) }}
+    {{ partial "components/paginator" . }}
+  </div>
+
+{{ else }}
+
+  {{/* ---------- INDIVIDUAL AUTHOR PAGE ---------- */}}
+
+{{ $authorKey := $slug }}
+{{ $authored := where site.RegularPages "Params.authors" "intersect" (slice $authorKey) }}
+{{ $authored = $authored.ByDate.Reverse }}
+
+
+  {{/* WIDE HERO */}}
+  <div class="mx-auto max-w-6xl px-6 md:px-12 pt-10">
+    {{ partial "author/hero.html" . }}
+  </div>
+
+  {{/* NARROW BIO */}}
+  <div class="mx-auto max-w-prose px-6 md:px-12 mt-8">
+    <article class="prose prose-slate prose-base dark:prose-invert">
+      {{ .Content }}
+    </article>
+  </div>
+
+  {{/* DASHBOARD SECTIONS */}}
+  {{ $cfg := .Params.author_content }}
+
+  {{/* Defaults if YAML missing */}}
+  {{ $pubs_enable := true }}
+  {{ $pubs_latest := 5 }}
+  {{ $pubs_bib := "/bib/references.bib" }}
+  {{ $pubs_keys := "" }}
+  {{ $pubs_key := "" }}
+
+  {{ with $cfg.publications }}
+    {{ $pubs_enable = (.enable | default true) }}
+    {{ $pubs_latest = (.latest | default 5) }}
+    {{ $pubs_bib = (.bib | default "/bib/references.bib") }}
+    {{ $pubs_keys = (.keys | default "") }}
+    {{ $pubs_key = (.key | default "") }}
+  {{ end }}
+
+
+  {{ $events_enable := true }}
+  {{ $events_latest := 6 }}
+  {{ $events_view := "article-grid" }}
+  {{ $events_css := "grid-3" }}
+  {{ if and $cfg (isset $cfg "events") }}
+    {{ with $cfg.events }}
+      {{ $events_enable = (.enable | default true) }}
+      {{ $events_latest = (.latest | default 6) }}
+      {{ $events_view = (.view | default "article-grid") }}
+    {{ end }}
+  {{ end }}
+
+  {{ $news_enable := true }}
+  {{ $news_latest := 6 }}
+  {{ $news_view := "article-grid" }}
+  {{ $news_css := "grid-3"}}
+  {{ $news_type := "news" }}
+  {{ if and $cfg (isset $cfg "news") }}
+    {{ with $cfg.news }}
+      {{ $news_enable = (.enable | default true) }}
+      {{ $news_latest = (.latest | default 6) }}
+      {{ $news_view = (.view | default "article-grid") }}
+      {{ $news_type = (.type | default "news") }}
+    {{ end }}
+  {{ end }}
+
+  <div class="mx-auto max-w-6xl px-6 md:px-12 mt-14 pb-12">
+
+    {{/* Publications */}}
+    {{ if $pubs_enable }}
+      <section class="mb-14">
+        <div class="not-prose mb-4">
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+            Publications
+          </h2>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+            Selected recent or highlighted papers.
+          </p>
+        </div>
+
+        {{ partial "pubs/embed.html" (dict
+          "bib" $pubs_bib
+          "latest" $pubs_latest
+          "keys" $pubs_keys
+        ) }}
+      </section>
+    {{ end }}
+
+    {{/* Events */}}
+    {{ if $events_enable }}
+      {{ $events := first $events_latest (where $authored "Type" "events") }}
+      <section class="mb-14">
+        <div class="not-prose mb-5">
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+            Events
+          </h2>
+        </div>
+
+        {{ if gt (len $events) 0 }}
+          {{ $config := dict "columns" 3 "len" (len $events) "fill_image" true "show_date" true "show_read_time" false "show_read_more" true "css_class" $events_css}}
+          <div class="grid-3">
+            {{ partial "functions/render_view" (dict "fragment" "start" "page" . "item" . "view" $events_view "config" $config) }}
+            {{ range $i, $it := $events }}
+              {{ partial "functions/render_view" (dict "page" $ "item" $it "view" $events_view "index" $i "config" $config) }}
+            {{ end }}
+            {{/* Add ghost cards so the row still looks like a 3-up grid */}}
+          {{ $count := len $events }}
+          {{ $display := cond (gt $count 3) 3 $count }}
+          {{ $missing := sub 3 $display }}
+            {{ if gt $missing 0 }}
+              {{ range seq $missing }}
+              <div class="invisible pointer-events-none rounded-2xl min-h-[220px]"></div>
+              {{ end }}
+            {{ end }}
+            {{ partial "functions/render_view" (dict "fragment" "end" "page" . "item" . "view" $events_view) }}
+          </div>
+        {{ else }}
+          <p class="text-sm text-slate-600 dark:text-slate-300">No events yet.</p>
+        {{ end }}
+      </section>
+    {{ end }}
+
+    {{/* News */}}
+    {{ if $news_enable }}
+      {{ $news := first $news_latest (where $authored "Type" $news_type) }}
+      <section class="mb-6">
+        <div class="not-prose mb-5">
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+            News
+          </h2>
+        </div>
+
+        {{ if gt (len $news) 0 }}
+          {{ $config := dict "columns" 3 "len" (cond (lt (len $news) 3) 3 (len $news)) "fill_image" true "show_date" true "show_read_time" false "show_read_more" true "css_class" $news_css}}
+          <div class="grid-3 w-full">
+            {{ partial "functions/render_view" (dict "fragment" "start" "page" . "item" . "view" $news_view "config" $config) }}
+            {{ range $i, $it := $news }}
+              {{ partial "functions/render_view" (dict "page" $ "item" $it "view" $news_view "index" $i "config" $config) }}
+            {{ end }}
+
+            {{/* Add ghost cards so the row still looks like a 3-up grid */}}
+          {{ $count := len $news }}
+          {{ $display := cond (gt $count 3) 3 $count }}
+          {{ $missing := sub 3 $display }}
+
+          {{ if gt $missing 0 }}
+            {{ range seq $missing }}
+            <div class="invisible pointer-events-none rounded-2xl min-h-[220px]"></div>
+            {{ end }}
+          {{ end }}
+
+            {{ partial "functions/render_view" (dict "fragment" "end" "page" . "item" . "view" $news_view) }}
+          </div>
+        {{ else }}
+          <p class="text-sm text-slate-600 dark:text-slate-300">No news yet.</p>
+        {{ end }}
+      </section>
+    {{ end }}
+
+  </div>
+
+{{ end }}
+
+{{ end }}

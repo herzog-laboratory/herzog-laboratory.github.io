@@ -1,0 +1,11 @@
+{{/* One-line news list: item */}}
+{{ $p := .item }}
+
+<li class="hb-news-oneline__item">
+  <span class="hb-news-oneline__date">
+    {{ $p.Date | time.Format "Jan 02, 2006" }}
+  </span>
+  <a class="hb-news-oneline__title" href="{{ $p.RelPermalink }}">
+    {{ $p.Title }}
+  </a>
+</li>

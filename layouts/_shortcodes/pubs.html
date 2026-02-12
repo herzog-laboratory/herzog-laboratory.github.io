@@ -1,0 +1,13 @@
+{{- $bib := (.Get "bib") | default "/bib/references.bib" -}}
+{{- $latest := (.Get "latest") -}}
+{{- $key := (.Get "key") -}}
+{{- $keys := (.Get "keys") -}}
+
+<div class="hb-scroll-reveal opacity-0 translate-y-6 transition-all duration-700"></div>
+      <div class="pub-embed pub-embed--inline"
+         data-bib="{{ $bib }}"
+         data-latest="{{ $latest }}"
+         {{ with $key }}data-key="{{ . }}"{{ end }}
+         {{ with $keys }}data-keys="{{ . }}"{{ end }}>
+      <em class="opacity-70">Loading publications…</em>
+</div>

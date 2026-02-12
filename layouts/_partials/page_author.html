@@ -1,0 +1,18 @@
+{{/* Author profile box */}}
+
+{{ $root := . }}
+
+{{ if and (ne $root.Type "page") (not (or (eq site.Params.profile false) (eq $root.Params.profile false))) }}
+
+  {{ if and (not $root.Params.authors) ($root.Scratch.Get "superuser_username") }}
+    {{ $author_page := site.GetPage (printf "/authors/%s" ($root.Scratch.Get "superuser_username")) }}
+    {{ partial "page_author_card" (dict "page" $root "author_page" $author_page) }}
+
+  {{ else if $root.Params.authors }}
+    {{ $taxonomy := "authors" }}
+    {{ range $author_obj := ($root.GetTerms $taxonomy) }}
+      {{ partial "page_author_card" (dict "page" $root "author_page" $author_obj.Page) }}
+    {{ end }}
+  {{ end }}
+
+{{ end }}

@@ -1,0 +1,44 @@
+/* Hugo Blox custom theme: HERZOG DARK ACADEMIA */
+
+:root {
+
+  /* ---------- Primary: Ink Navy (#1A2238) ---------- */
+  --hb-primary-50-rgb: 241 244 250;
+  --hb-primary-100-rgb: 225 232 245;
+  --hb-primary-200-rgb: 197 209 235;
+  --hb-primary-300-rgb: 164 182 221;
+  --hb-primary-400-rgb: 122 146 201;
+  --hb-primary-500-rgb: 26 34 56; /* base */
+  --hb-primary-600-rgb: 22 29 48;
+  --hb-primary-700-rgb: 18 24 40;
+  --hb-primary-800-rgb: 14 19 32;
+  --hb-primary-900-rgb: 10 14 24;
+  --hb-primary-950-rgb: 7 10 18;
+
+  /* ---------- Secondary: Oxidised Forest/Teal (#3C5A54) ---------- */
+  --hb-secondary-50-rgb: 240 247 246;
+  --hb-secondary-100-rgb: 221 238 236;
+  --hb-secondary-200-rgb: 190 221 218;
+  --hb-secondary-300-rgb: 152 197 193;
+  --hb-secondary-400-rgb: 110 169 164;
+  --hb-secondary-500-rgb: 60 90 84; /* base */
+  --hb-secondary-600-rgb: 52 79 74;
+  --hb-secondary-700-rgb: 44 68 64;
+  --hb-secondary-800-rgb: 36 55 52;
+  --hb-secondary-900-rgb: 27 41 39;
+  --hb-secondary-950-rgb: 17 26 25;
+
+  /* ---------- Tertiary / Accent: Scholarly Violet (#5A4B81) ---------- */
+  --hb-tertiary-50-rgb: 244 242 250;
+  --hb-tertiary-100-rgb: 232 227 246;
+  --hb-tertiary-200-rgb: 208 200 236;
+  --hb-tertiary-300-rgb: 178 166 222;
+  --hb-tertiary-400-rgb: 141 126 203;
+  --hb-tertiary-500-rgb: 90 75 129; /* base */
+  --hb-tertiary-600-rgb: 76 63 110;
+  --hb-tertiary-700-rgb: 63 52 92;
+  --hb-tertiary-800-rgb: 49 41 72;
+  --hb-tertiary-900-rgb: 36 30 53;
+  --hb-tertiary-950-rgb: 23 19 34;
+
+}

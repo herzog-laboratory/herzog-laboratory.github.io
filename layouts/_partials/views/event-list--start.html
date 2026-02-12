@@ -1,0 +1,63 @@
+{{/* --------- Build Tag + Author options from event pages --------- */}}
+{{ $types := slice }}
+{{ $roles := slice }}
+{{ $authorSlugs := slice }}
+
+{{ range site.RegularPages }}
+  {{ if eq .Section "events" }}
+
+    {{ with .Params.event_type }}
+      {{ $types = $types | append (lower .) }}
+    {{ end }}
+
+    {{ with .Params.role }}
+      {{ $roles = $roles | append (lower .) }}
+    {{ end }}
+
+    {{ with .Params.authors }}
+      {{ range . }}
+        {{ $authorSlugs = $authorSlugs | append . }}
+      {{ end }}
+    {{ end }}
+
+  {{ end }}
+{{ end }}
+
+{{ $types = $types | uniq | sort }}
+{{ $roles = $roles | uniq | sort }}
+{{ $authorSlugs = $authorSlugs | uniq | sort }}
+
+&nbsp;
+
+<div class="event-table">
+
+  <div class="event-filters">
+    <div class="event-filter-label">Filter:</div>
+
+    <select id="typeSelect" aria-label="Filter by event type">
+      <option value="*">All types</option>
+      {{ range $types }}
+        <option value="{{ . }}">{{ . }}</option>
+      {{ end }}
+    </select>
+
+    <select id="roleSelect" aria-label="Filter by role">
+      <option value="*">All roles</option>
+      {{ range $roles }}
+        <option value="{{ . }}">{{ . }}</option>
+      {{ end }}
+    </select>
+
+    <select id="authorSelect" aria-label="Filter by person">
+      <option value="*">All people</option>
+      {{ range $authorSlugs }}
+        {{ $slug := . }}
+        {{ $ap := site.GetPage (printf "/authors/%s" $slug) }}
+        <option value="{{ $slug }}">{{ if $ap }}{{ $ap.Title }}{{ else }}{{ $slug }}{{ end }}</option>
+      {{ end }}
+    </select>
+
+    <input id="eventSearch" class="event-search" placeholder="Search…" aria-label="Search events" />
+  </div>
+
+  <div id="eventsList" class="event-list">

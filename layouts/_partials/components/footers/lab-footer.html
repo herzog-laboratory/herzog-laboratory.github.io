@@ -1,0 +1,83 @@
+{{/* Footer driven by params.lab_footer.columns (home front matter or site params) */}}
+
+{{ $home := site.GetPage "/" }}
+{{ $cfg := cond (and $home (isset $home.Params "lab_footer")) $home.Params.lab_footer site.Params.lab_footer }}
+
+{{ if and $cfg $cfg.columns }}
+
+  {{ $logosCols := where $cfg.columns "type" "logos" }}
+  {{ $linksCol := index (where $cfg.columns "type" "links") 0 }}
+
+  {{/* Split links into 2 roughly equal columns */}}
+  {{ $items := $linksCol.items | default (slice) }}
+  {{ $n := len $items }}
+  {{ $mid := div (add $n 1) 2 }}
+  {{ $leftLinks := first $mid $items }}
+  {{ $rightLinks := after $mid $items }}
+
+
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+  <section class="hb-footer-min">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+
+      <div class="hb-footer-grid3">
+
+        {{/* Column 1: Affiliations + Support combined */}}
+        <div class="hb-footer-col1">
+          {{ range $logosCols }}
+            <div class="hb-footer-logoBlock">
+              {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+              <div class="hb-footer-logos-row">
+                {{ range .items }}
+                  <a class="hb-footer-logo" href="{{ .url }}" target="_blank" rel="noopener"
+                     aria-label="{{ .name }}" data-tooltip="{{ .name }}">
+                    <img class="hb-footer-logo-img" src="{{ .logo }}" alt="{{ .name }}">
+                  </a>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+
+        {{/* Column 2: Links (first half) */}}
+        <div class="hb-footer-col2">
+          {{ with $linksCol.title }}<h3>{{ . }}</h3>{{ end }}
+          <ul class="hb-footer-linkslist">
+            {{ range $leftLinks }}
+              <li>
+                <a class="hb-footer-link" href="{{ .url }}">
+                  {{ with .icon }}
+                    <i class="hb-link-icon fa-solid {{ . }}" aria-hidden="true"></i>
+                  {{ end }}
+                  <span class="hb-link-text">{{ .text }}</span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        {{/* Column 3: Links (second half) */}}
+        <div class="hb-footer-col3">
+          <div class="hb-footer-h3-spacer" aria-hidden="true"></div>
+            <ul class="hb-footer-linkslist">
+              {{ range $rightLinks }}
+                <li>
+                  <a class="hb-footer-link" href="{{ .url }}">
+                    {{ with .icon }}
+                      <i class="hb-link-icon fa-solid {{ . }}" aria-hidden="true"></i>
+                    {{ end }}
+                    <span class="hb-link-text">{{ .text }}</span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+{{ end }}

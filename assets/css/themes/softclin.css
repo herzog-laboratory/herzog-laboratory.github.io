@@ -1,0 +1,44 @@
+/* Hugo Blox custom theme: HERZOG SOFT CLINICAL + DISTINCT ACCENT */
+
+:root {
+
+  /* ---------- Primary: Soft Clinical Blue (trustworthy, not dark) (#5C7FA3) ---------- */
+  --hb-primary-50-rgb: 241 246 251;
+  --hb-primary-100-rgb: 225 236 246;
+  --hb-primary-200-rgb: 196 217 236;
+  --hb-primary-300-rgb: 161 193 222;
+  --hb-primary-400-rgb: 122 163 203;
+  --hb-primary-500-rgb: 92 127 163; /* base */
+  --hb-primary-600-rgb: 78 109 142;
+  --hb-primary-700-rgb: 64 89 117;
+  --hb-primary-800-rgb: 50 69 91;
+  --hb-primary-900-rgb: 37 51 67;
+  --hb-primary-950-rgb: 23 32 42;
+
+  /* ---------- Secondary: Cool Off-White (keeps hero bright) (#F5F7FA) ---------- */
+  --hb-secondary-50-rgb: 255 255 255;
+  --hb-secondary-100-rgb: 250 251 253;
+  --hb-secondary-200-rgb: 245 247 250;
+  --hb-secondary-300-rgb: 236 241 246;
+  --hb-secondary-400-rgb: 225 232 240;
+  --hb-secondary-500-rgb: 245 247 250; /* base */
+  --hb-secondary-600-rgb: 212 221 233;
+  --hb-secondary-700-rgb: 176 190 208;
+  --hb-secondary-800-rgb: 135 150 170;
+  --hb-secondary-900-rgb: 95 109 127;
+  --hb-secondary-950-rgb: 58 69 83;
+
+  /* ---------- Tertiary / Accent: Herzog Plum (distinct, epigenetics-adjacent) (#56406F) ---------- */
+  --hb-tertiary-50-rgb: 245 242 248;
+  --hb-tertiary-100-rgb: 233 227 240;
+  --hb-tertiary-200-rgb: 212 199 226;
+  --hb-tertiary-300-rgb: 185 166 208;
+  --hb-tertiary-400-rgb: 151 124 186;
+  --hb-tertiary-500-rgb: 86 64 111; /* base */
+  --hb-tertiary-600-rgb: 73 54 95;
+  --hb-tertiary-700-rgb: 60 44 78;
+  --hb-tertiary-800-rgb: 47 34 61;
+  --hb-tertiary-900-rgb: 35 25 45;
+  --hb-tertiary-950-rgb: 22 16 29;
+
+}

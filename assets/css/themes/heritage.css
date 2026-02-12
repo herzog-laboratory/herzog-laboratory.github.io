@@ -1,0 +1,44 @@
+/* Hugo Blox custom theme: HERZOG HERITAGE VIOLET */
+
+:root {
+
+  /* ---------- Primary: Herzog Violet (your signature) (#6F63B5) ---------- */
+  --hb-primary-50-rgb: 242 241 252;
+  --hb-primary-100-rgb: 224 221 247;
+  --hb-primary-200-rgb: 194 189 238;
+  --hb-primary-300-rgb: 158 150 224;
+  --hb-primary-400-rgb: 121 110 206;
+  --hb-primary-500-rgb: 111 99 181; /* base */
+  --hb-primary-600-rgb: 93 82 160;
+  --hb-primary-700-rgb: 75 66 134;
+  --hb-primary-800-rgb: 58 50 105;
+  --hb-primary-900-rgb: 41 35 77;
+  --hb-primary-950-rgb: 24 20 47;
+
+  /* ---------- Secondary: Parchment (bright “trad academia” neutral) (#EFE8DD) ---------- */
+  --hb-secondary-50-rgb: 255 254 252;
+  --hb-secondary-100-rgb: 252 250 246;
+  --hb-secondary-200-rgb: 247 243 235;
+  --hb-secondary-300-rgb: 242 236 225;
+  --hb-secondary-400-rgb: 235 228 214;
+  --hb-secondary-500-rgb: 239 232 221; /* base */
+  --hb-secondary-600-rgb: 215 207 194;
+  --hb-secondary-700-rgb: 186 178 166;
+  --hb-secondary-800-rgb: 149 142 131;
+  --hb-secondary-900-rgb: 110 105 97;
+  --hb-secondary-950-rgb: 72 69 63;
+
+  /* ---------- Tertiary / Accent: Antique Gold (micro-accent) (#B5A16B) ---------- */
+  --hb-tertiary-50-rgb: 252 249 240;
+  --hb-tertiary-100-rgb: 248 241 218;
+  --hb-tertiary-200-rgb: 239 227 176;
+  --hb-tertiary-300-rgb: 228 208 129;
+  --hb-tertiary-400-rgb: 214 186 93;
+  --hb-tertiary-500-rgb: 181 161 107; /* base */
+  --hb-tertiary-600-rgb: 156 138 89;
+  --hb-tertiary-700-rgb: 130 115 72;
+  --hb-tertiary-800-rgb: 100 89 56;
+  --hb-tertiary-900-rgb: 73 65 40;
+  --hb-tertiary-950-rgb: 47 42 26;
+
+}
