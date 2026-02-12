@@ -22,11 +22,4 @@ Welcome to our new website 👋. We'll use this to share updates, events we'll b
 
 Key your eyes peeled!
 
-{{< pubs latest="1" >}}
-
-
-{{< pubs key="TGIF" >}}
-
-
-
 
