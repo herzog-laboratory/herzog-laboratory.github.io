@@ -12,7 +12,7 @@ sections:
       user_groups:
         - Principal Investigator
         - Postdoctoral Researchers
-        - PhD Students
+        - Students
         - Honorary
         - Alumni 
       sort_by: 'Params.last_name'
