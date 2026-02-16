@@ -3,6 +3,9 @@
 title: ''
 date: 2026-02-04
 type: landing
+image:
+  filename: "featured.png"
+  alt_text: "Herzog Lab | Epigenetics, Ageing & Stem Cells"
 
 design:
   # Default section spacing
