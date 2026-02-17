@@ -236,7 +236,8 @@
     slides: `<i class="fa-solid fa-chalkboard"></i>`,
     video: `<i class="fa-solid fa-video"></i>`,
     abstract: `<i class="fa-regular fa-file"></i>`,
-    cite: `<i class="fa-solid fa-quote-left"></i>`
+    cite: `<i class="fa-solid fa-quote-left"></i>`,
+    package: `<i class="fa-solid fa-box-open"></i>`
 };
 
 
@@ -247,12 +248,12 @@
     const url = entryUrl(t);
     const pdf = bestPdfUrl(t);
     const abs = t.abstract || "";
-
     const code = t.code || "";
     const dataset = t.dataset || "";
     const poster = t.poster || "";
     const slides = t.slides || "";
     const video = t.video || "";
+    const pkg  = t.package || t.software || "";
 
     const buttons = [];
 
@@ -260,6 +261,7 @@
     if (pdf) buttons.push(button("PDF", pdf, ICONS.pdf));
     if (url) buttons.push(button(doi ? "DOI" : "HTML", url, ICONS.html));
     if (code) buttons.push(button("Code", code, ICONS.code));
+    if (pkg)  buttons.push(button("Package / software", pkg, ICONS.package));
     if (dataset) buttons.push(button("Dataset", dataset, ICONS.dataset));
     if (poster) buttons.push(button("Poster", poster, ICONS.poster));
     if (slides) buttons.push(button("Slides", slides, `<span class="pub-ic" aria-hidden="true">🎞️</span>`));
