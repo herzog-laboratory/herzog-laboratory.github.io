@@ -81,7 +81,9 @@ author_content:
 
 ---
 
-Dr. Chiara Herzog leads the Epigenetics and Ageing lab at King's College London, within the Department of Twin Research and Genetic Epidemiology. With over 10 years of experience in interdisciplinary research, she has pioneered novel insights into how our epigenome records past exposures, present cellular state, and future disease risk. 
+Dr. Chiara Herzog (personal website: [chiaraherzog.github.io](https://chiaraherzog.github.io)) leads the Epigenetics and Ageing lab at King's College London, within the Department of Twin Research and Genetic Epidemiology. With over 10 years of experience in interdisciplinary research, she has pioneered novel insights into how our epigenome records past exposures, present cellular state, and future disease risk. 
+
+The research is currently supported by the Prof. Anthony Mellows Medal and King's Prize Fellowship.
 
 ## Awards & Recognition
 
