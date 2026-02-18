@@ -379,7 +379,7 @@ params:
       - title: "Affiliations & support"
         type: "logos"
         items:
-          - name: "Affiliated with King’s College London"
+          - name: "Supported by the King's Prize Fellowship & Prof. Mellows Medal."
             url: "https://www.kcl.ac.uk/"
             logo: "/media/kcl.png"
           # - name: "Funded by the Wellcome Trust"
