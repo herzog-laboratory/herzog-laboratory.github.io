@@ -284,10 +284,10 @@ sections:
       filters:
         folders:
           - events
-        exclude_past: true  # Show both past and future events
+        exclude_past: false  # Show both past and future events
       count: 3
       sort_by: Date
-      sort_ascending: true
+      sort_ascending: false
     design:
       view: article-grid
       show_date: true
