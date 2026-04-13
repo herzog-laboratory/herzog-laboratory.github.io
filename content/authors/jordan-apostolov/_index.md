@@ -38,7 +38,7 @@ website: "https://www.jordanapostolov.com/"
 
 # User groups
 user_groups:
-  - Students
+  - Alumni
 
 author_content:
   publications:
