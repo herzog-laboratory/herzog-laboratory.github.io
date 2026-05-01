@@ -15,9 +15,8 @@ sections:
   - block: hero
     id: about
     content:
-      title: |
-        Herzog Lab @ KCL
-        **Epigenetics, Ageing & Stem Cells**
+      title: '<div style="text-align:center"><div style="display:flex; justify-content:center; align-items:center; gap:1.5rem; margin-bottom:1.5rem;"><img src="/media/cambridge_bw.png" alt="University of Cambridge" style="height:40px;"><img src="/media/csci_bw.png" alt="Cambridge Stem Cell Institute" style="height:48px;"></div>Herzog Lab<br><span style="font-weight:400">Epigenetics, Ageing & Stem Cells</span></div>'
+
       text: |
         We study how the epigenome records biological experience, and how this memory can be harnessed to measure health and reshape stem cell fate across ageing and disease.
       # We study the epigenome as both a recorder of biological experience and a regulator of stem cell function across ageing and disease.
@@ -334,13 +333,14 @@ sections:
       connect_title: Connect with us
       address:
         lines:
-          - Department of Twin Research & Genetic Epidemiology
-          - St. Thomas' Hospital
-          - Westminster Bridge Road
-          - SE1 7EH
-          - London
+          - Herzog Lab
+          - Cambridge Stem Cell Institute
+          - Jeffrey Cheah Biomedical Centre
+          - Puddicombe Way
+          - Cambridge Biomedical Campus
+          - CB2 0AW, Cambridge
           - United Kingdom
-      email: chiara.herzog@kcl.ac.uk
+      email: ch2151 [ at ] cam.ac.uk
       social:
         - icon: brands/github
           url: https://github.com/chiaraherzog
@@ -352,7 +352,7 @@ sections:
         button:
           text: View opportunities
           url: /opportunities
-      map_url: https://maps.google.com/?q=University+of+Excellence
+      map_url: https://maps.app.goo.gl/PuSvtWcVVQ5Ny5ebA 
       show_form: false
     design:
       css_class: "bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
@@ -379,12 +379,15 @@ params:
       - title: "Affiliations & support"
         type: "logos"
         items:
-          - name: "Supported by the King's Prize Fellowship & Prof. Mellows Medal."
+          - name: "Cambridge Stem Cell Institute"
             url: "https://www.kcl.ac.uk/"
-            logo: "/media/kcl.png"
-          # - name: "Funded by the Wellcome Trust"
-          #   url: "https://wellcome.org/"
-          #   logo: "/media/wellcome.png"
+            logo: "/media/csci_sq.png"
+          - name: "University of Cambridge"
+            url: "https://www.cam.ac.uk/"
+            logo: "/media/cambridge.png"
+          - name: "Funded by the Wellcome Trust"
+            url: "https://wellcome.org/"
+            logo: "/media/wellcome.png"
 
       - title: "Links"
         type: "links"
