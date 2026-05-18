@@ -44,7 +44,7 @@ sections:
       text: | 
         Our lab is built around the ethos that excellent research and a healthy lab culture go hand in hand. We believe the **best science is done by people who can be themselves, enjoy what they do, feel valued for their contributions, and have the opportunity to grow**. We therefore emphasize openness, creativity, and kindness.
         
-        Lab members benefit from close integration within King's College London, with research spanning experimental work, population studies, and clinical cohorts, alongside active collaborations across the UK, Europe, and the US. You will have opportunities to work across methods and disciplines, access rich datasets and resources, and have access to exciting collaborations and networks.
+        Lab members benefit from close integration within the <a href="https://www.stemcells.cam.ac.uk/" target="_blank">Cambridge Stem Cell Institute</a> at the University of Cambridge, with research spanning experimental work, population studies, and clinical cohorts, alongside active collaborations across the UK, Europe, and the US. You will have opportunities to work across methods and disciplines, access rich datasets and resources, and have access to exciting collaborations and networks.
 
         If you're excited by ambitious questions about why we age and how we might engineer the cell's software, and are motivated to grow as an independent scientist, our lab could be a great fit for you. 
     design:
