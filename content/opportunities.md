@@ -56,19 +56,19 @@ sections:
       title: Open roles
       subtitle: ''
       text: |
-        We will be advertising positions shortly. Please check back soon.
+        Please see below our current roles.
       filters:
         folders:
           - position
       count: 0
     design:
       view: article-grid
-      columns: 2
-      show_author: false
-      show_read_time: false
       show_date: true
-      show_tags: true
-      css_class: "bg-gray-50 dark:bg-gray-900"
+      show_read_time: false
+      show_read_more: true
+      css_class: "bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 grid-3"
+      spacing:
+        padding: ["4rem", 0, "4rem", 0]
 
   - block: cta-card
     id: eoi
