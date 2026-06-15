@@ -25,5 +25,5 @@ This is an exciting opportunity to work at the forefront of epigenomics research
 
 Closing date: 21 June, 2026
 
-<a href="https://www.cam.ac.uk/jobs/research-assistant-stem-cell-culture-gene-editing-fixed-term-ps49758">Further information here</a>
+<a href="https://www.cam.ac.uk/jobs/research-assistant-stem-cell-culture-gene-editing-fixed-term-ps49758-0">Further information here</a>
 

@@ -25,5 +25,5 @@ This is an exciting opportunity to work at the forefront of epigenomics research
 
 Closing date: 21 June, 2026
 
-<a href="https://www.cam.ac.uk/jobs/research-assistant-epigenomics-fixed-term-ps49757">Further information here</a>
+<a href="https://www.cam.ac.uk/jobs/research-assistant-epigenomics-fixed-term-ps49757-0">Further information here</a>
 
