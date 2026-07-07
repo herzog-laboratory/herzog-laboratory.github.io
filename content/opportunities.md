@@ -56,7 +56,7 @@ sections:
       title: Open roles
       subtitle: ''
       text: |
-        Please see below our current roles.
+        We currently have no roles advertised, however please feel free to reach out below.
       filters:
         folders:
           - position

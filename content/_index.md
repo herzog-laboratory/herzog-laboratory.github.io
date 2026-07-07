@@ -176,7 +176,7 @@ sections:
       text: |
         Read recent publications co-authored by lab members
       bib: /bib/references.bib
-      keys: "TGAtlas,BuccalBC,functageingsigs,LBARecs"
+      keys: "ImmuneAgingBiomarkers,TGAtlas,BuccalBC,functageingsigs,LBARecs"
       archive:
         enable: true
         text: "See all publications"
@@ -388,6 +388,9 @@ params:
           - name: "Funded by the Wellcome Trust"
             url: "https://wellcome.org/"
             logo: "/media/wellcome.png"
+          - name: "Funded by the Advanced Research + Invention Agency"
+            url: "https://aria.org.uk/opportunity-spaces/sculpting-innate-immunity/sustained-viral-resilience/funded-projects"
+            logo: "/media/ARIA.png"
 
       - title: "Links"
         type: "links"
