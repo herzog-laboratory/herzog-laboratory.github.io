@@ -7,11 +7,22 @@ cd "$(dirname "$0")/.."
 
 allowed=$(grep -v '^\s*#' scripts/known-deprecations.txt | grep -v '^\s*$')
 
-# Collect the deprecated API/config key named in each warning.
+# Run the build once and keep both its output and its exit status. Piping hugo
+# straight into sed would discard the status and let a build that failed outright
+# be reported as "no new deprecations".
+output=$(hugo build --logLevel warn --renderToMemory 2>&1)
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo "hugo build failed (exit $status) -- deprecations not checked:"
+  printf '%s\n' "$output" | tail -20
+  exit "$status"
+fi
+
 # Pull the deprecated API/config key out of each warning. Two shapes exist:
 #   deprecated: <api> was deprecated in Hugo vX ...
 #   deprecated: project config key <key> was deprecated in Hugo vX ...
-found=$(hugo build --logLevel warn --renderToMemory 2>&1 \
+found=$(printf '%s\n' "$output" \
   | sed -n 's/.*deprecated: \(.*\) was deprecated in Hugo .*/\1/p' \
   | sed 's/^project config key //' \
   | sort -u)
