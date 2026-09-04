@@ -14,7 +14,7 @@ organizations:
     url: https://www.kcl.ac.uk/research/herzog-group
 
 # Short bio (displayed in user profile at end of posts)
-bio: Jordan is an undergraduate student working on large-scale data harmonisation and improvement of computational tools for ageing research.
+bio: Jan-Mar 2026. Jordan was an undergraduate student working on large-scale data harmonisation and improvement of computational tools for ageing research.
 
 # Interests to show in About widget
 interests:
@@ -50,4 +50,4 @@ author_content:
 
 ---
 
-Jordan Apostolov is an undergraduate student in [Dr Herzog](/authors/admin/)'s and [Prof Jordana Bell](https://sites.google.com/view/jordana-bell)'s groups. He works on large-scale harmonisation of datasets for epigenetic ageing research and to improve tools for deconvolution and prediction.
+Jordan Apostolov was an undergraduate student in [Dr Herzog](/authors/admin/)'s and [Prof Jordana Bell](https://sites.google.com/view/jordana-bell)'s groups between January and March 2026. He worked on large-scale harmonisation of datasets for epigenetic ageing research and to improve tools for deconvolution and prediction.
