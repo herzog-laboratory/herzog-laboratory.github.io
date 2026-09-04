@@ -1,0 +1,16 @@
+# Deprecation warnings emitted by the Hugo Blox modules themselves, not by this
+# site's own code. Still present upstream as of blox-tailwind v0.10.0 and
+# blox-plugin-netlify v1.2.0, so they cannot be fixed here without re-adding
+# template overrides.
+#
+# Anything NOT listed here is ours to fix. Re-check on module upgrades and
+# delete lines that upstream has resolved.
+#
+# blox-tailwind hugo.yaml mounts
+module.mounts.includeFiles
+# blox-tailwind: baseof.html, rss.xml, index.webmanifest, site_head.html
+.Site.LanguageCode
+# blox-tailwind: init.html, hbx/sections.html, site_head.html
+.Site.Data
+# blox-plugin-netlify: src/layouts/index.redirects
+.Site.AllPages

@@ -1,7 +1,7 @@
 name: Deploy website to GitHub Pages
 
 env:
-  WC_HUGO_VERSION: '0.152.1'
+  WC_HUGO_VERSION: '0.165.0'
   NODE_VERSION: '20'
 
 on:
@@ -64,7 +64,7 @@ jobs:
           node_modules/
           modules/*/node_modules/
         key: ${{ runner.os }}-hugo-deps-${{ hashFiles('**/go.mod', '**/package-lock.json',
-          '**/pnpm-lock.yaml') }}
+          '**/pnpm-lock.yaml', 'package.json', 'scripts/fix-tailwind-bin.mjs') }}
         restore-keys: |
           ${{ runner.os }}-hugo-deps-
 
@@ -80,6 +80,16 @@ jobs:
     - name: Setup Pages
       id: pages
       uses: actions/configure-pages@v5
+
+      # A restored node_modules/ cache can reinstate pnpm's shell shim for
+      # tailwindcss, which Hugo >= 0.16x rejects. postinstall ran before the
+      # cache was restored, so re-apply it here. Idempotent.
+    - name: Ensure tailwindcss binary is a Node script
+      if: hashFiles('package.json') != ''
+      run: node scripts/fix-tailwind-bin.mjs
+
+    - name: Check for new deprecation warnings
+      run: bash scripts/check-deprecations.sh
 
     - name: Build with Hugo
       env:

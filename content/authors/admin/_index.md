@@ -97,7 +97,8 @@ Chiara has previously received funding through the prestigious King's Prize Fell
 
 ## Funding
 
-- 2026-present - Wellcome Career Development Award
+- 2026-present - Advance Research + Invention Agency Sustained Viral Resilience - [epiPRIME](https://aria.org.uk/opportunity-spaces/programmable-physiology/sustained-viral-resilience/funded-projects?cardId=epiprime)
+- 2026-present - Wellcome Trust Career Development Award - [unlock:epi](https://wellcome.org/research-funding/funding-portfolio/funded-grants/unlockepi-unlocking-epigenome-understand-detect)
 - 2026-present - Centre for Ageing Resilience in a Changing Environment (CARICE) seed funding, led by Dr. Sumner
 - 2025-present - Crick Institute Networking Fund (to support the [London Ageing Research Network](https://www.londonageingresearch.com))
 - 2024-2025 - King's Mechanobiology Centre Seed Funding, together with Dr. Kalakoutis
