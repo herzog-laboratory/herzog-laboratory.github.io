@@ -81,12 +81,13 @@ author_content:
 
 ---
 
-Dr. Chiara Herzog (personal website: [chiaraherzog.github.io](https://chiaraherzog.github.io)) is a Group Leader and Assistant Research Professor at the Cambridge Stem Cell Institute, University of Cambridge. Chiara previously held positions at King's College London (Department of Twin Research and Genetic Epidemiology), the University of Innsbruck (European Translational Oncology Preventiotn & Screening Institute, Institute for Biomedical Ageing Research), University College London (Institute for Women's and Children's Health), and University of Edinburgh (Centre for Discovery Brain Sciences). With over 10 years of experience in interdisciplinary research, she has pioneered novel insights into how our epigenome records past exposures, present cellular state, and future disease risk. 
+Dr. Chiara Herzog (personal website: [chiaraherzog.github.io](https://chiaraherzog.github.io)) is a Group Leader and Assistant Research Professor at the Cambridge Stem Cell Institute, University of Cambridge. Chiara previously held positions at King's College London (Department of Twin Research and Genetic Epidemiology), the University of Innsbruck (European Translational Oncology Prevention & Screening Institute, Institute for Biomedical Ageing Research), University College London (Institute for Women's and Children's Health), and University of Edinburgh (Centre for Discovery Brain Sciences). With over 10 years of experience in interdisciplinary research, she has pioneered novel insights into how our epigenome records past exposures, present cellular state, and future disease risk. 
 
-Chiara has previously received funding through the prestigious King's Prize Fellowship and is currently supported by a Wellcome Trust Career Development Award. 
+Chiara has previously received funding through the prestigious King's Prize Fellowship and is currently supported by a Wellcome Trust Career Development Award.  She also leads the epiPRIME project within the Advanced Research + Invention Agency's (ARIA) Sustained Viral Resilience programme.
 
 ## Awards & Recognition
 
+- 2026 - American Association for Cancer Research, Cancer Research, Early Career Award
 - 2025 - Wellcome Trust Career Development Award
 - 2025 - Rising Star, Longevity Summit Dublin
 - 2025 - Prof. Anthony Mellows Medal
@@ -97,8 +98,9 @@ Chiara has previously received funding through the prestigious King's Prize Fell
 
 ## Funding
 
-- 2026-present - Advance Research + Invention Agency Sustained Viral Resilience - [epiPRIME](https://aria.org.uk/opportunity-spaces/programmable-physiology/sustained-viral-resilience/funded-projects?cardId=epiprime)
+- 2026-present - Advanced Research + Invention Agency Sustained Viral Resilience - [epiPRIME](https://aria.org.uk/opportunity-spaces/programmable-physiology/sustained-viral-resilience/funded-projects?cardId=epiprime)
 - 2026-present - Wellcome Trust Career Development Award - [unlock:epi](https://wellcome.org/research-funding/funding-portfolio/funded-grants/unlockepi-unlocking-epigenome-understand-detect)
+- 2026 - British Society for Research on Ageing Small Research Grant
 - 2026-present - Centre for Ageing Resilience in a Changing Environment (CARICE) seed funding, led by Dr. Sumner
 - 2025-present - Crick Institute Networking Fund (to support the [London Ageing Research Network](https://www.londonageingresearch.com))
 - 2024-2025 - King's Mechanobiology Centre Seed Funding, together with Dr. Kalakoutis
