@@ -42,7 +42,7 @@ user_groups:
 
 author_content:
   publications:
-    enable: false
+    enable: true
   news:
     enable: false
   events:

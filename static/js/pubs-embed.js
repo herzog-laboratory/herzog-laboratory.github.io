@@ -66,6 +66,130 @@
     return short.join(", ") + more;
   }
 
+  // ---------- Author matching ----------
+  // Normalize a name for comparison: lowercase, strip LaTeX/braces/punctuation.
+  function keyify(s) {
+    return (s || "")
+      .toLowerCase()
+      .replace(/[{}]/g, "")
+      .replace(/~/g, " ")
+      .replace(/\\[a-zA-Z]+/g, "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  // Split "Last, First" or "First Last" into normalized { last, first }.
+  function splitName(raw) {
+    const a = (raw || "").trim();
+    let last = "", given = "";
+    if (a.includes(",")) {
+      const parts = a.split(",");
+      last = parts[0];
+      given = parts.slice(1).join(",");
+    } else {
+      const toks = a.split(/\s+/).filter(Boolean);
+      last = toks.pop() || "";
+      given = toks.join(" ");
+    }
+    const lastClean = keyify(last);
+    const givenClean = keyify(given);
+    return { last: lastClean, first: (givenClean.split(" ")[0] || "") };
+  }
+
+  // Candidate people.json keys for a bib author, e.g. "chiara herzog" / "herzog chiara".
+  function peopleKeys(raw) {
+    const { last, first } = splitName(raw);
+    return [`${first} ${last}`.trim(), `${last} ${first}`.trim(), last];
+  }
+
+  function parseAuthors(authorStr) {
+    return (authorStr || "")
+      .split(/\s+and\s+/i)
+      .map(s => s.trim())
+      .filter(Boolean);
+  }
+
+  // An entry matches when any of its authors either maps to this author page in
+  // people.json, or matches one of the given name spellings (surname + first initial).
+  function entryHasAuthor(entry, authorUrl, names, people) {
+    const authors = parseAuthors(entry?.entryTags?.author);
+    if (!authors.length) return false;
+
+    return authors.some(a => {
+      if (authorUrl && people) {
+        for (const k of peopleKeys(a)) {
+          const href = people[k];
+          if (href && normalizeUrl(href) === normalizeUrl(authorUrl)) return true;
+        }
+      }
+      const bib = splitName(a);
+      if (!bib.last) return false;
+      return names.some(n => {
+        if (n.last !== bib.last) return false;
+        if (!n.first || !bib.first) return true;
+        return n.first[0] === bib.first[0];
+      });
+    });
+  }
+
+  function normalizeUrl(u) {
+    return (u || "").trim().replace(/\/+$/, "").toLowerCase();
+  }
+
+  const peopleCache = new Map();
+  async function loadPeopleMap(url) {
+    if (!url) return null;
+    if (peopleCache.has(url)) return peopleCache.get(url);
+    const p = fetch(url)
+      .then(r => (r.ok ? r.json() : null))
+      .then(raw => {
+        if (!raw) return null;
+        // Re-key so lookups are insensitive to spacing/punctuation/case.
+        const map = {};
+        for (const [k, v] of Object.entries(raw)) map[keyify(k)] = v;
+        return map;
+      })
+      .catch(() => null);
+    peopleCache.set(url, p);
+    return p;
+  }
+
+  // ---------- Shared renderer / third-party loaders ----------
+  function loadScript(src, attrs) {
+    return new Promise((resolve, reject) => {
+      if (document.querySelector(`script[src="${src}"]`)) return resolve();
+      const s = document.createElement("script");
+      s.src = src;
+      Object.assign(s, attrs || {});
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  // pubs-bib.js owns the full item layout (linked authors, action buttons,
+  // abstract, DOI + metric badges). Load it so embeds render the same markup.
+  async function ensureRenderer() {
+    if (window.PubsBib) return window.PubsBib;
+    try {
+      await loadScript("/js/pubs-bib.js");
+    } catch {
+      return null;
+    }
+    return window.PubsBib || null;
+  }
+
+  // Altmetric / Dimensions badges, only pulled in when something has a DOI.
+  let badgesRequested = false;
+  function ensureBadgeScripts() {
+    if (badgesRequested) return;
+    badgesRequested = true;
+    loadScript("https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js", { async: true }).catch(() => {});
+    loadScript("https://badge.dimensions.ai/badge.js", { async: true }).catch(() => {});
+  }
+
   async function ensureBibtexParser() {
     if (typeof bibtexParse !== "undefined") return;
     // If you already load bibtexParse on every page, you can delete this whole function.
@@ -143,8 +267,15 @@
       }
 
       const entries = bibtexParse.toJSON(raw);
-      sortEntries(entries);
+      const PubsBib = await ensureRenderer();
+      if (PubsBib) {
+        PubsBib.sortEntries(entries);
+      } else {
+        sortEntries(entries);
+      }
 
+      // Citation key -> raw BibTeX, so the "Copy citation" button works here too.
+      const bibMap = PubsBib ? PubsBib.buildBibSnippetMap(raw) : null;
       const byKey = new Map(entries.map(e => [e.citationKey, e]));
 
       for (const n of bibNodes) {
@@ -152,6 +283,10 @@
         const keys = (n.getAttribute("data-keys") || "")
           .split(",").map(s => s.trim()).filter(Boolean);
         const latest = parseInt(n.getAttribute("data-latest") || "0", 10);
+        const authorUrl = (n.getAttribute("data-author-url") || "").trim();
+        // `;`-separated so "Last, First" spellings survive.
+        const authorNames = (n.getAttribute("data-author-names") || "")
+          .split(";").map(s => s.trim()).filter(Boolean).map(splitName);
 
         let chosen = [];
 
@@ -160,12 +295,38 @@
           if (e) chosen = [e];
         } else if (keys.length) {
           chosen = keys.map(k => byKey.get(k)).filter(Boolean);
+        } else if (authorUrl || authorNames.length) {
+          // Only this person's publications, newest first.
+          const people = await loadPeopleMap(n.getAttribute("data-people"));
+          chosen = entries.filter(e => entryHasAuthor(e, authorUrl, authorNames, people));
+          if (latest > 0) chosen = chosen.slice(0, latest);
         } else if (latest > 0) {
           chosen = entries.slice(0, latest);
         }
 
         if (!chosen.length) {
-          n.innerHTML = `<em>Publication not found.</em>`;
+          // Nothing to show: drop the whole section rather than leave an empty
+          // heading (the person may simply not have published with the lab yet).
+          const section = n.closest && n.closest("[data-pubs-section]");
+          if (section) {
+            section.hidden = true;
+            section.style.display = "none";
+          } else {
+            n.innerHTML = `<em>Publication not found.</em>`;
+          }
+        } else if (PubsBib) {
+          // Same layout as the full publications page.
+          const people = await loadPeopleMap(n.getAttribute("data-people") || "/bib/people.json");
+          const options = { previewClick: "lightbox", bibMap };
+          n.innerHTML = chosen
+            .map(e => PubsBib.buildItemHtml(e, people || {}, options))
+            .join("") + PubsBib.lightboxHtml();
+          PubsBib.setupInteractions(n, options);
+          if (chosen.some(e => e?.entryTags?.doi)) {
+            ensureBadgeScripts();
+            // The badge scripts scan on load; re-scan once they are in.
+            setTimeout(() => PubsBib.initBadges(), 1200);
+          }
         } else {
           n.innerHTML = chosen.map(renderCard).join("");
         }

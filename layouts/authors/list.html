@@ -80,17 +80,35 @@
 
   {{/* Defaults if YAML missing */}}
   {{ $pubs_enable := true }}
-  {{ $pubs_latest := 5 }}
+  {{ $pubs_latest := 0 }}
   {{ $pubs_bib := "/bib/references.bib" }}
   {{ $pubs_keys := "" }}
   {{ $pubs_key := "" }}
+  {{/* Extra name spellings used in the .bib, if they differ from the display name */}}
+  {{ $pubs_names := "" }}
 
   {{ with $cfg.publications }}
     {{ $pubs_enable = (.enable | default true) }}
-    {{ $pubs_latest = (.latest | default 5) }}
+    {{ if isset . "latest" }}{{ $pubs_latest = .latest }}{{ end }}
     {{ $pubs_bib = (.bib | default "/bib/references.bib") }}
     {{ $pubs_keys = (.keys | default "") }}
     {{ $pubs_key = (.key | default "") }}
+    {{ with .names }}
+      {{ if reflect.IsSlice . }}
+        {{ $pubs_names = delimit . ";" }}
+      {{ else }}
+        {{ $pubs_names = printf "%v" . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Unless an explicit key/keys list is given, show only publications this
+       person co-authored. Matching runs client-side against /bib/people.json
+       (name -> author page) plus the display name and any `names` aliases. */}}
+  {{ $pubs_author_url := "" }}
+  {{ if not (or $pubs_key $pubs_keys) }}
+    {{ $pubs_author_url = .RelPermalink }}
+    {{ $pubs_names = cond (eq $pubs_names "") .Title (printf "%s;%s" .Title $pubs_names) }}
   {{ end }}
 
 
@@ -124,20 +142,25 @@
 
     {{/* Publications */}}
     {{ if $pubs_enable }}
-      <section class="mb-14">
+      {{/* When filtering by author, the section removes itself client-side if
+           this person has no publications in the .bib yet. */}}
+      <section class="mb-14"{{ if $pubs_author_url }} data-pubs-section{{ end }}>
         <div class="not-prose mb-4">
           <h2 class="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
             Publications
           </h2>
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Selected recent or highlighted papers.
+            {{ if $pubs_author_url }}Publications co-authored by {{ .Title }}.{{ else }}Selected recent or highlighted papers.{{ end }}
           </p>
         </div>
 
         {{ partial "pubs/embed.html" (dict
           "bib" $pubs_bib
           "latest" $pubs_latest
+          "key" $pubs_key
           "keys" $pubs_keys
+          "author_url" $pubs_author_url
+          "author_names" $pubs_names
         ) }}
       </section>
     {{ end }}

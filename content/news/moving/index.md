@@ -16,7 +16,7 @@ tags:
   - lab-update
 
 content_meta:
-  trending: true
+  trending: false
 ---
 
 The Herzog lab is moving to the Cambridge Stem Cell Institute (CSCI). The unique environment at the CSCI, the broader Cambridge Biomedical Campus, and the University of Cambridge will provide an excellent opportunity to catalyse our research. We look forward to collaborating with colleagues across the institute, campus, and wider community and can't wait to see where the coming years take our research!

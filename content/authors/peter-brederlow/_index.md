@@ -46,7 +46,7 @@ author_content:
   news:
     enable: false
   events:
-    enable: false
+    enable: true
 
 ---
 

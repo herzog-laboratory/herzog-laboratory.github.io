@@ -16,7 +16,7 @@ tags:
   - lab-update
 
 content_meta:
-  trending: true
+  trending: false
 
 ---
 

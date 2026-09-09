@@ -16,7 +16,7 @@ tags:
   - lab-update
 
 content_meta:
-  trending: true
+  trending: false
 ---
 
 I have been fascinated by diverging innate immune responses to insults since my PhD, where I [observed that tissue-resident microglia and infiltrating macrophages exhibited strikingly different behaviours following an injury](https://doi.org/10.1242/dev.174698) despite sharing similar lineages and overall function. What could be driving this divergence? At the same time, I also became intrigued by the concept of harnessing and modulating innate immune responses to improve health outcomes due to their critical role in maintenance and first responses, which was further strenghtened over the years with emerging [literature that an aged immune system drives whole body ageing](https://doi.org/10.1038/s41586-021-03547-7).

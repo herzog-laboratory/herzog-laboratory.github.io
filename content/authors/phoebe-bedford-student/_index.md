@@ -35,7 +35,7 @@ social:
 
 author_content:
   publications:
-    enable: false
+    enable: true
   news:
     enable: false
   events:

@@ -4,9 +4,10 @@
 {{- $keys := (.Get "keys") -}}
 
 <div class="hb-scroll-reveal opacity-0 translate-y-6 transition-all duration-700"></div>
-      <div class="pub-embed pub-embed--inline"
+      <div class="pub-embed pub-embed--inline not-prose"
          data-bib="{{ $bib }}"
          data-latest="{{ $latest }}"
+         data-people="/bib/people.json"
          {{ with $key }}data-key="{{ . }}"{{ end }}
          {{ with $keys }}data-keys="{{ . }}"{{ end }}>
       <em class="opacity-70">Loading publications…</em>

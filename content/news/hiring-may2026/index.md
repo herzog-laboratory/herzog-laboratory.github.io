@@ -16,7 +16,7 @@ tags:
   - lab-update
 
 content_meta:
-  trending: true
+  trending: false
 ---
 
 We're hiring two enthusiastic research assistants to work on [epigenomics & nucleic acid technologies](/position/ra-epigenome-2026/) and [stem cell culture and gene editing](/position/ra-cellculture-2026/). 

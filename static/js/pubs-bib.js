@@ -187,8 +187,7 @@
 
   return `
     <span class="pub-authors pub-authors--short">
-      ${shortHtml}<span class="pub-authors__fade"></span>
-      <span class="pub-authors__more"> and ${moreCount} more</span>
+      ${shortHtml}<span class="pub-authors__more"> and ${moreCount} more</span>
     </span>
     <span class="pub-authors pub-authors--full" hidden>${fullHtml}</span>
     <button class="pub-authors__toggle" type="button" data-action="toggle-authors">show all</button>
@@ -562,6 +561,32 @@
     }
   }
 
+  // ---------- Metric badges ----------
+  // Altmetric / Dimensions scan the DOM on load, so re-scan after we render.
+  function initBadges() {
+    if (window._altmetric && typeof window._altmetric.embed_init === "function") {
+      window._altmetric.embed_init();
+    }
+    if (window.__dimensions_badge_embed__ && typeof window.__dimensions_badge_embed__.init === "function") {
+      window.__dimensions_badge_embed__.init();
+    } else if (typeof window.DimensionsBadge !== "undefined" && typeof window.DimensionsBadge.init === "function") {
+      window.DimensionsBadge.init();
+    }
+  }
+
+  // ---------- Shared API ----------
+  // Exposed so the lightweight embeds (pubs-embed.js) render identical items:
+  // linked author names, action buttons, abstract, DOI and metric badges.
+  window.PubsBib = {
+    buildItemHtml,
+    buildBibSnippetMap,
+    loadPeopleMap,
+    setupInteractions,
+    lightboxHtml,
+    sortEntries,
+    initBadges,
+  };
+
   ready(async () => {
     const statusEl = document.getElementById("pubs-status");
     const pubsEl = document.getElementById("pubs");
@@ -599,17 +624,7 @@
       setupFilters(entries, pubsEl);
       setupInteractions(pubsEl, options);
 
-                // Re-scan embeds after dynamic DOM render
-            if (window._altmetric && typeof window._altmetric.embed_init === "function") {
-            window._altmetric.embed_init();
-            }
-
-            // Dimensions badge init: try common globals
-            if (window.__dimensions_badge_embed__ && typeof window.__dimensions_badge_embed__.init === "function") {
-            window.__dimensions_badge_embed__.init();
-            } else if (typeof window.DimensionsBadge !== "undefined" && typeof window.DimensionsBadge.init === "function") {
-            window.DimensionsBadge.init();
-            }
+      initBadges();
 
 
       statusEl.textContent = "";

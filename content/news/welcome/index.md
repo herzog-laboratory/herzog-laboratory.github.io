@@ -15,7 +15,7 @@ tags:
   - welcome
 
 content_meta:
-  trending: true
+  trending: false
 ---
 
 Welcome to our new website 👋. We'll use this to share updates, events we'll be at, recent publications, and showcase our amazing members.
