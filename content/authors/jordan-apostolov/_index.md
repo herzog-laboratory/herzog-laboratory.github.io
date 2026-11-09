@@ -36,9 +36,12 @@ social:
 # Author's website URL
 website: "https://www.jordanapostolov.com/"
 
+# Display order on team pages (lower = first)
+weight: 21
+
 # User groups
 user_groups:
-  - Alumni
+  - Team Members
 
 author_content:
   publications:

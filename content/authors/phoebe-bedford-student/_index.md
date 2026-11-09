@@ -24,9 +24,12 @@ highlight_name: false
 # Author's website URL
 website: ""
 
+# Display order on team pages (lower = first)
+weight: 20
+
 # User groups
 user_groups:
-  - Alumni
+  - Team Members
 
 # Social/Academic Networking
 social:

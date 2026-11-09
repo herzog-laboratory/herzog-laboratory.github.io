@@ -224,14 +224,8 @@ sections:
       title: Meet the team
       subtitle: 'Pushing the boundaries of geroscience'
       text: 'Our team of researchers brings together expertise from multiple disciplines to redefine how we leverage epigenetics in ageing research.'
-      user_groups:
-        - Principal Investigator
-        - Postdoctoral Researchers
-        - PhD Students
-        - Students
-        - Alumni
-      sort_by: 'Params.last_name'
-      sort_ascending: true
+      # No groups listed: only the "View all team members" button is shown here
+      user_groups: []
       cta:
         text: View all team members
         url: /authors

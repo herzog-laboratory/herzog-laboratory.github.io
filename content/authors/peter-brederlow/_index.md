@@ -36,9 +36,12 @@ social:
 # Author's website URL
 website: ""
 
+# Display order on team pages (lower = first)
+weight: 9
+
 # User groups
 user_groups:
-  - Students
+  - Team Members
 
 author_content:
   publications:
