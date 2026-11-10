@@ -4,6 +4,8 @@ A log of changes made to the Herzog Lab website by HZ.
 
 ---
 
+## 10 November 2026: Added team head shots and bios
+
 ## 9 November 2026: Team page restructure and new member profiles
 
 **Branch:** `team-page-update` (saved locally, not yet pushed to GitHub)
