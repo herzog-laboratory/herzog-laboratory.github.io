@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Kim
+title: Dacen (Kim) Wang
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position/tagline
-role: Role to be confirmed
+role: MPhil Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,12 +14,12 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Kim is a member of the Herzog Lab. (Placeholder bio - replace me.)
+bio: Kim is currently pursuing an MPhil in Stem Cell Medicine at the University of Cambridge.
 
 # Interests to show in About widget
 interests:
-  - Epigenetics
-  - Ageing
+  - Interest 1
+  - Interest 2
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.
@@ -54,4 +54,8 @@ author_content:
 
 ---
 
-Kim is a member of the Herzog Lab. (Placeholder - add a longer biography here.)
+I graduated from UCL with a bachelor’s degree in Biomedical Sciences and am currently pursuing an MPhil in Stem Cell Medicine at the University of Cambridge. I am interested in applying computational methods to biological research. My previous research experience at UCL includes automated single-cell tracking and the development of AI agents for biological research.
+
+**If you had 10 extra healthy years in life, what would you do more of?**
+
+If I had ten extra years of life, I would spend some of that time exploring subjects that interest me but that I currently have little time to study. I would love to pursue degrees in computer science, mathematics, and even history. I would also travel the world and spend more time with family and friends, allowing myself to slow down and enjoy life a little more.
