@@ -18,8 +18,9 @@ bio: Kim is currently pursuing an MPhil in Stem Cell Medicine at the University 
 
 # Interests to show in About widget
 interests:
-  - Interest 1
-  - Interest 2
+  - Computational biology
+  - Cell tracking
+  - AI & automation
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.

@@ -18,8 +18,10 @@ bio: Sheida is a Research Assistant at the Stem Cell Institute, University of Ca
 
 # Interests to show in About widget
 interests:
-  - Interest 1
-  - Interest 2
+  - DNA Methylation
+  - Ageing
+  - Stem cells
+  - Cancer research
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.

@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Cassie
+title: Cassie Temple
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position/tagline
-role: Role to be confirmed
+role: MPhil Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,12 +14,13 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Cassie is a member of the Herzog Lab. (Placeholder bio - replace me.)
+bio: Cassie is an MPhil student based in the Herzog Lab. 
 
 # Interests to show in About widget
 interests:
-  - Epigenetics
-  - Ageing
+  - Translational Approaches
+  - Modulating Aging
+  - Rejuvenation
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.
@@ -54,4 +55,10 @@ author_content:
 
 ---
 
-Cassie is a member of the Herzog Lab. (Placeholder - add a longer biography here.)
+Cassie is an MPhil in Stem Cell Medicine student at the University of Cambridge and a University of Edinburgh Neuroscience graduate. Her current project aims to assess the effects of epigenetic modulation of LINE-1 retrotransposons on hematopoietic stem cell (HSC) function.  
+She did a year abroad at the University of Chicago where she studied chemotherapy-induced peripheral neuropathy in Drosophila models. She has previously researched glioblastoma stem cells (GSCs) at the CSCI in Dr Harry Bustrode’s lab as part of a summer project doing discovery-stage research for a startup biotech company, Migration Biotherapeutics, as well as for her undergraduate dissertation where she assessed synergistic drug combinations to target GSCs. 
+Her interests lie in ageing, epigenetics and rejuvenation, particularly in translational approaches to modulating ageing.
+
+**If you had 10 extra healthy years in life, what would you do more of?**
+
+If I had 10 more years, I would dilly-dally more! These days I never have time to read, play piano or paint, so I’d do all of that and spend more time with friends, travelling, and going to every manner of museum, gallery and theatre. And I’d obviously spend more time bothering my cat (he wouldn’t be pleased…).

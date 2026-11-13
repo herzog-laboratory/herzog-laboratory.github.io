@@ -1248,3 +1248,50 @@ html {
 .wide-section .max-w-prose {
   max-width: 130ch !important;
 }
+/* ---- Home page "Meet the team" (section class "home-team") ----
+   Compact cards at ~50% of the theme size: 4 per row (2 per row on phones),
+   showing photo, name and role only. The full team page is unaffected. */
+.home-team .grid {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* every row as tall as the tallest card, so all cards match */
+    grid-auto-rows: 1fr;
+}
+/* stretch each card to fill its grid cell */
+.home-team .grid > .group > div {
+    height: 100%;
+}
+@media (min-width: 640px) {
+    .home-team .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+.home-team .grid .rounded-2xl {
+    border-radius: 0.75rem;
+}
+/* square photo box, matching the square (top-anchored) crop made by the template, so photos are not trimmed again */
+.home-team .grid .h-64 {
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+.home-team .grid .p-6 {
+    padding: 0.625rem 0.75rem 0.75rem;
+}
+.home-team .grid h3 {
+    font-size: 0.9375rem;
+    line-height: 1.3;
+}
+.home-team .grid p.font-medium {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+}
+.home-team .grid .mb-3 {
+    margin-bottom: 0;
+}
+/* Hide the bio snippet */
+.home-team .grid p.line-clamp-2 {
+    display: none;
+}

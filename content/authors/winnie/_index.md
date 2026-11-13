@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Winnie
+title: Dr. Winnie Lau
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position/tagline
-role: Role to be confirmed
+role: Lab Manager
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -14,12 +14,12 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Winnie is a member of the Herzog Lab. (Placeholder bio - replace me.)
-
+bio: Winnie is the lab manager for the Herzog Lab
 # Interests to show in About widget
 interests:
-  - Epigenetics
-  - Ageing
+  - Cross team collaboration
+  - Ex vivo
+  - Transcriptional regulation
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.
@@ -54,4 +54,8 @@ author_content:
 
 ---
 
-Winnie is a member of the Herzog Lab. (Placeholder - add a longer biography here.)
+Winnie Lau (PhD) is the Laboratory Manager for the groups of Dr Chiara Herzog and Dr Adam Wilkinson at the Cambridge Stem Cell Institute. She has over 20 years of laboratory experience in Haematology, completing her PhD at the University of Bristol and post-doctoral positions with Professors Bertie Gottgens and Cedric Ghevaert, at the University of Cambridge. Her past research focused on the transcriptional regulation of haematopoietic stem cell development as well as the ex vivo development of Erythroid and Megakaryocytic lineages from primary and human iPSCs. Nowadays, she prefers to facilitate research by applying her strong organisational skills to ensure efficient and safe laboratory operations; creating a collaborative and supportive environment that enable researchers to achieve their research goals.
+
+**If you had 10 extra healthy years in life, what would you do more of?**
+
+I would slow down and take more time to appreciate the smaller things in life, from visiting and catching up with friends and family more often, to enjoying uninterrupted reading, trying recipes or learning a new skill. If money were no issue, I would travel – there are so many places to explore, cultures to experience and cuisines to try!

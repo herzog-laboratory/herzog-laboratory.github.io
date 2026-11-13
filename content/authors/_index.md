@@ -27,4 +27,17 @@ sections:
       columns: 3
       spacing:
         padding: ["3rem", 0, "3rem", 0]
+
+  - block: markdown
+    id: alumni
+    content:
+      title: Alumni
+      text: |
+        - **Jordan Apostolov**, Undergraduate student, King's College London (Jan–Mar 2026)
+        - **Phoebe Bedford**, Summer research student, University of Oxford (Jul–Aug 2025)
+        - **Peter Brederlow**, Visiting MSc student, University of Tübingen
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-900"
+      spacing:
+        padding: [0, 0, "3rem", 0]
 ---

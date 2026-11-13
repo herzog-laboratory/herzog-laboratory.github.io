@@ -18,8 +18,9 @@ bio: Richard is a research assistant working on establishing epigenetic editing 
 
 # Interests to show in About widget
 interests:
-  - Interest 1
-  - Interest 2
+  - Epigenetic editing
+  - Rejuvenation
+  - Stem cells
 
 # Social/Academic Networking
 # Uncomment and fill in the links below.

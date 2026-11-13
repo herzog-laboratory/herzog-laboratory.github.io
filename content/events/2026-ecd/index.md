@@ -7,7 +7,6 @@ country: "United Kingdom"
 country_flag: "🇬🇧"
 event_type: "conference"   # conference | outreach | symposium | seminar | workshop
 role: "poster"       # keynote | invited talk | organizer | panel | vice-chair | etc
-authors: ["peter-brederlow"]
 tags: ["conference"]
 featured: true
 

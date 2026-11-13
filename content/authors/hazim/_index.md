@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Hazim
+title: Hazim Zaidi
 
 # Is this the primary user of the site?
 superuser: false
@@ -20,7 +20,6 @@ bio: Hazim is a project coordinator for the EpiPRIME project.
 interests:
   - Innovation Grants
   - Academia - Industry Collaboration
-  - Start ups
   - Data Analysis
 
 # Social/Academic Networking

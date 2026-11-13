@@ -4,6 +4,27 @@ A log of changes made to the Herzog Lab website by HZ.
 
 ---
 
+## 13 November 2026: Moved Jordan, Peter and Phoebe to an Alumni list
+
+**Branch:** `team-page-update` (not yet committed)
+**Live site affected?** No, not until merged into `main`.
+
+1. Removed the profile cards (and profile pages) for **Jordan Apostolov**, **Peter Brederlow** and **Phoebe Bedford**.
+2. Added an **Alumni** section directly below the team grid on the team page (`content/authors/_index.md`), listing their names, role, institution and dates as plain text, alphabetical by surname.
+3. Removed their entries from `static/bib/people.json`, so their names on publications are no longer links to deleted pages.
+4. Removed Peter as "author" on the BSRA 2026 and Epigenomics of Common Diseases event posts (the event summaries still name him).
+
+To add someone to Alumni later: delete their folder in `content/authors/` and add a bullet to the Alumni section in `content/authors/_index.md`.
+
+## 13 November 2026: Team photos on the home page
+
+1. The home page **Meet the team** section now shows a card for every current team member (photo, name and role), 4 per row, ordered by `weight`, above the "View all team members" button. Set in `content/_index.md` (`team-showcase` block).
+2. Added two rules to `assets/css/custom.css` that apply to the home page only (class `home-team`): keep 4 cards per row on laptop screens (the theme would otherwise show 3), and hide the short bio line on the cards. The full team page is unchanged.
+3. Made the home page cards **about half the size** (all sizing in `assets/css/custom.css` under "home-team"); 4 per row on desktop, 2 per row on phones.
+4. Widened the home page team grid slightly so names fit on one line, and made **all cards the same size** (matching the tallest card, the Garden squirrels). Then enlarged the cards and photos by 30%.
+5. **Photos are now cropped from the top** of the original (instead of the centre) on both the home page and the full team page, so heads are not cut off. Home page photos are now square so they are not trimmed a second time.
+6. Made the home page cards **not clickable** (no link to individual profiles, no hover effect); visitors use "View all team members" instead. This uses a copy of the theme's team template at `layouts/_partials/hbx/blocks/team-showcase/block.html` with a new `link_profiles: false` setting. The full team page still links to profiles. Note: because this template is now a local copy, future theme updates to the team section will not apply automatically.
+
 ## 10 November 2026: Added team head shots and bios
 
 ## 9 November 2026: Team page restructure and new member profiles
