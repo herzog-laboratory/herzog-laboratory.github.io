@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Cassie is an MPhil student based in the Herzog Lab. 
+bio: MPhil student focusing on translational approaches to ageing 
 
 # Interests to show in About widget
 interests:

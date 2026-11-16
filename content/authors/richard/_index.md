@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Richard is a research assistant working on establishing epigenetic editing in hematopoietic stem cells (HSCs).
+bio: Research Assistant working on establishing epigenetic editing in hematopoietic stem cells (HSCs).
 
 # Interests to show in About widget
 interests:

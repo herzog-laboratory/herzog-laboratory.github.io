@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Kim is currently pursuing an MPhil in Stem Cell Medicine at the University of Cambridge.
+bio: MPhil student focusing on computational biology
 
 # Interests to show in About widget
 interests:

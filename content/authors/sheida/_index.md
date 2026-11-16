@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Sheida is a Research Assistant at the Stem Cell Institute, University of Cambridge
+bio: Research Assistant understanding DNA methylation signatures
 
 # Interests to show in About widget
 interests:

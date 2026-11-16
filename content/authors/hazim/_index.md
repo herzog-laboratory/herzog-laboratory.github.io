@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Hazim is a project coordinator for the EpiPRIME project.
+bio: Project coordinator for the ARIA EpiPRIME project
 
 # Interests to show in About widget
 interests:

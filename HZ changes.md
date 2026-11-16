@@ -4,6 +4,18 @@ A log of changes made to the Herzog Lab website by HZ.
 
 ---
 
+## 16 November 2026: New EpiPRIME project page
+
+**Branch:** `team-page-update` (not yet committed)
+**Live site affected?** No, not until merged into `main`.
+
+1. **Link from the Research page.** Added a short announcement box at the end of the "Epigenetic regulation of stem cell function" section (`content/research.md`, the `modify` block): *"We have won a £5.79 million ARIA grant-funded project."* with a **Read more about EpiPRIME →** link.
+2. **New EpiPRIME page** at `/epiprime/` (`content/epiprime.md`). It has a banner ("EpiPRIME: Epigenetics for viral resilience") with a "Back to research" button, then the project write-up and a Funding section linking to ARIA.
+3. **Wider text layout.** The theme's standard text section limits lines to about 65 characters, which made the page feel packed. Added a wider version of that section, `markdown-wide` (`layouts/_partials/hbx/blocks/markdown-wide/block.html`), used only on the EpiPRIME page. Other pages are unchanged. To change the width, add `max_width:` under the section's `design:` (e.g. `max-w-4xl`; the default is `max-w-5xl`).
+4. **Photos.** Added an explanatory figure (`assets/media/epigenetic-memory.png`) and a team photo (`assets/media/epiprime-team.png`). Each is wrapped in a `<div style="max-width: ...; margin: 0 auto;">` to set its size and keep it centred: 600px for the figure, 760px for the team photo. Without the wrapper, images sit to the left in the wider layout.
+
+To add another image on this page: put the file in `assets/media/`, add `![description](filename.png)` in the text, and wrap it the same way (keep a blank line above and below the image line).
+
 ## 13 November 2026: Moved Jordan, Peter and Phoebe to an Alumni list
 
 **Branch:** `team-page-update` (not yet committed)

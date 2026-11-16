@@ -14,7 +14,7 @@ organizations:
     url: https://www.stemcells.cam.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Winnie is the lab manager for the Herzog Lab
+bio: Lab manager for the Herzog & Wilkinson Lab
 # Interests to show in About widget
 interests:
   - Cross team collaboration
