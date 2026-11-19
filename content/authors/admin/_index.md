@@ -60,9 +60,12 @@ highlight_name: true
 # Author's website URL
 website: ""
 
+# Display order on team pages (lower = first)
+weight: 1
+
 # User groups
 user_groups:
-  - Principal Investigator
+  - Team Members
 
 author_content:
   publications:

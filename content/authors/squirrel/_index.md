@@ -19,9 +19,12 @@ highlight_name: false
 # Author's website URL
 website: ""
 
+# Display order on team pages (lower = first)
+weight: 99
+
 # User groups
 user_groups:
-  - Honorary
+  - Team Members
 
 author_content:
   publications:

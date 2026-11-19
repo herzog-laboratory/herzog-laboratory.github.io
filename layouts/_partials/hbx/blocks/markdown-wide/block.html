@@ -1,0 +1,19 @@
+{{/* Custom block: same as the built-in `markdown` block, but wider.
+     Use `block: markdown-wide` in a page's front matter.
+     Optional: set `design.max_width` to a Tailwind max-width class
+     (e.g. max-w-3xl, max-w-4xl, max-w-5xl, max-w-6xl, max-w-7xl). Default: max-w-5xl. */}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $title := $block.content.title | emojify | $page.RenderString }}
+{{ $text := $block.content.text | emojify | $page.RenderString | safeHTML }}
+{{ $max_width := $block.design.max_width | default "max-w-5xl" }}
+
+<div class="flex flex-col items-center {{ $max_width }} w-full mx-auto gap-3 justify-center px-6">
+
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $title }}
+  </div>
+
+  {{ with $text }}<div class="prose prose-slate lg:prose-xl dark:prose-invert max-w-none w-full">{{ . }}</div>{{ end }}
+</div>

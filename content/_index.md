@@ -224,25 +224,24 @@ sections:
       title: Meet the team
       subtitle: 'Pushing the boundaries of geroscience'
       text: 'Our team of researchers brings together expertise from multiple disciplines to redefine how we leverage epigenetics in ageing research.'
+      # Overview of current team: photo, name and role, ordered by weight
       user_groups:
-        - Principal Investigator
-        - Postdoctoral Researchers
-        - PhD Students
-        - Students
-        - Alumni
-      sort_by: 'Params.last_name'
+        - Team Members
+      sort_by: 'Weight'
       sort_ascending: true
       cta:
         text: View all team members
         url: /authors
         icon: user-group
     design:
-      show_role: false
+      show_role: true
       show_organizations: false
-      show_interests: true
-      show_social: true
-      # Section background color
-      css_class: "bg-gray-50 dark:bg-gray-900"
+      show_interests: false
+      show_social: false
+      # Cards are not clickable; visitors use the "View all team members" button
+      link_profiles: false
+      # Section background color; "home-team" sets compact 4-per-row cards (see assets/css/custom.css)
+      css_class: "home-team bg-gray-50 dark:bg-gray-900"
       # Reduce spacing
       spacing:
         padding: ["3rem", 0, "3rem", 0]

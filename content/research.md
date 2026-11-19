@@ -173,6 +173,11 @@ sections:
         - How reversible are ageing-associated epigenetic alterations?
         - Can defined epigenetic configurations promote resilience in ageing tissues?
 
+        <div class="not-prose mt-8 rounded-xl border border-white/20 bg-white/5 p-5">
+          <p class="text-base font-semibold text-white">We have won a £5.79 million ARIA grant-funded project.</p>
+          <a href="/epiprime/" class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary-300 hover:text-primary-200">Read more about EpiPRIME &rarr;</a>
+        </div>
+
     design:
       css_class: "dark bg-gray-900 text-white"
 
