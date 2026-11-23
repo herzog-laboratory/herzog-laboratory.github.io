@@ -88,6 +88,10 @@ Dr. Chiara Herzog (personal website: [chiaraherzog.github.io](https://chiaraherz
 
 Chiara has previously received funding through the prestigious King's Prize Fellowship and is currently supported by a Wellcome Trust Career Development Award.  She also leads the epiPRIME project within the Advanced Research + Invention Agency's (ARIA) Sustained Viral Resilience programme.
 
+**If you had 10 extra healthy years in life, what would you do more of?**
+
+I would use the extra years to appreciate the small and slow things more - gardening, picking up new skills or languages (and improving my banjo playing) - and experience life at a different pace. I travel a lot, but rarely have time to immerse myself fully. I’d love to discover new places properly: trekking in Torres del Paine, looking for spectacled bears in Peruvian cloud forests, sea kayaking and camping in Greenland, visiting Svalbard’s Global Seed Vault, greeting rock hyraxes in South Africa, or horse riding in Mongolia.
+
 ## Awards & Recognition
 
 - 2026 - American Association for Cancer Research, Cancer Research, Early Career Award
